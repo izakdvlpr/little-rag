@@ -1,0 +1,52 @@
+CHANGELOG — ÓRBITA API
+Todas as mudanças relevantes da API pública da Nimbus Tecnologia.
+Formato baseado em Keep a Changelog. Versionamento semântico.
+
+## [4.2.0] — 2025-06-18
+
+### Adicionado
+- Endpoint `GET /v4/faturas/:id/parcelas` retorna o parcelamento de uma fatura.
+- Campo `metadata` aceito em `POST /v4/cobrancas`, com limite de 20 chaves e 500 caracteres por valor.
+- Suporte a paginação por cursor em `GET /v4/clientes`. O parâmetro `page` continua funcionando, mas está depreciado.
+
+### Corrigido
+- `POST /v4/webhooks` aceitava URLs com esquema `http://` em produção. Agora só `https://` é permitido.
+- Timezone de `created_at` era devolvida em UTC-3 fixo, ignorando horário de verão histórico. Todas as datas agora saem em UTC com sufixo Z.
+
+## [4.1.0] — 2025-04-02
+
+### Adicionado
+- Rate limit por chave de API passou de 600 para 1200 requisições por minuto no plano Business.
+- Header `X-Orbita-Request-Id` em todas as respostas, para rastreamento no suporte.
+
+### Alterado
+- O campo `status` de cobrança ganhou o valor `em_disputa`. Integrações que fazem switch exaustivo precisam tratar o novo valor.
+
+### Depreciado
+- `GET /v4/relatorios/resumo` será removido na 5.0. Use `GET /v4/relatorios/consolidado`, que aceita os mesmos filtros e devolve o mesmo formato com dois campos a mais.
+
+## [4.0.0] — 2025-01-15
+
+### Quebra de compatibilidade
+- Autenticação por `api_key` na query string foi removida. Use o header `Authorization: Bearer <token>`.
+- `valor` passou a ser expresso em centavos, como inteiro. Antes era decimal em reais. Uma cobrança de R$ 19,90 agora é enviada como `1990`.
+- Respostas de erro mudaram de `{ "erro": "texto" }` para `{ "error": { "code": "...", "message": "...", "details": [] } }`.
+- Endpoints da v3 continuam no ar até 31 de dezembro de 2025, sem receber correções que não sejam de segurança.
+
+### Adicionado
+- Idempotência via header `Idempotency-Key` em todos os POSTs. Chaves são retidas por 24 horas.
+
+## [3.7.2] — 2024-11-08
+
+### Corrigido
+- Vazamento de conexões do pool do Postgres sob carga acima de 800 req/s. O pool não devolvia conexões quando o cliente abortava a requisição no meio.
+- Webhooks eram reenviados indefinidamente em caso de resposta 410. Agora 410 marca o webhook como permanentemente desativado.
+
+### Segurança
+- Corrigida enumeração de e-mails em `POST /v3/auth/recuperar`: a resposta agora é idêntica para e-mail existente e inexistente.
+
+## [3.7.0] — 2024-09-23
+
+### Adicionado
+- Sandbox completo em `https://sandbox.orbita.nimbus.dev`, com dados fictícios resetados toda madrugada às 4h UTC.
+- Suporte a Pix com QR Code dinâmico via `POST /v3/cobrancas/pix`.

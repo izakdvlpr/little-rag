@@ -1,0 +1,31 @@
+FAQ — SUPORTE TÉCNICO NIMBUS
+Base de conhecimento interna. Última atualização: 12 de julho de 2025.
+
+P: Quais são os horários de atendimento do suporte?
+R: O suporte N1 atende de segunda a sexta, das 8h às 20h (horário de Brasília), e aos sábados das 9h às 14h. O N2 atende em horário comercial, das 9h às 18h, apenas em dias úteis. O plantão N3 é 24x7, mas só pode ser acionado por incidentes de severidade S1 ou S2.
+
+P: O que define a severidade de um incidente?
+R: S1 é indisponibilidade total do serviço em produção ou perda de dados. S2 é degradação grave que afeta mais de 20% dos clientes, ou funcionalidade crítica indisponível sem alternativa. S3 é problema com solução de contorno conhecida. S4 é dúvida, melhoria ou cosmético.
+
+P: Quais são os SLAs de resposta?
+R: S1 tem 15 minutos para primeira resposta e 4 horas para resolução ou plano de contorno. S2 tem 1 hora e 8 horas. S3 tem 4 horas úteis e 3 dias úteis. S4 tem 1 dia útil e não tem prazo de resolução comprometido.
+
+O relógio do SLA pausa enquanto o chamado está aguardando informação do cliente, e volta a correr no momento da resposta.
+
+P: Como acionar o plantão fora do horário?
+R: Abra o chamado no portal Órbita marcando a severidade correta e, em seguida, ligue para o número de plantão que está no cartão fixado no canal #suporte-plantao. Só o telefonema dispara o pager. Abrir o chamado sozinho não acorda ninguém.
+
+P: O cliente relata lentidão mas os dashboards estão verdes. O que fazer?
+R: Verifique primeiro se a lentidão é regional. Os dashboards agregam por média global e escondem degradação em uma única região. Consulte o painel por região em Grafana > Órbita > Latência p99 por PoP. Se o p99 de um PoP específico estiver acima de 800 ms, abra incidente S2 e acione Infraestrutura.
+
+P: Posso reembolsar um cliente diretamente?
+R: N1 e N2 não têm alçada para reembolso. Qualquer valor até R$ 500 pode ser autorizado por um líder de suporte. Acima disso, é necessária aprovação do gerente de Customer Success. Reembolsos nunca são processados pelo suporte: o pedido vai para Finanças pelo formulário RF-02.
+
+P: Um cliente pediu exclusão total dos dados dele. Qual o procedimento?
+R: Encaminhe imediatamente para o encarregado de dados pelo e-mail interno dpo@nimbus.dev, sem prometer prazo ao cliente. A LGPD dá 15 dias para resposta formal. O suporte não executa exclusões, apenas registra e encaminha.
+
+P: A API do cliente retorna 429 constantemente. Como resolver?
+R: 429 é rate limit. Confirme o plano do cliente: Starter tem 300 req/min, Business tem 1200 req/min desde a versão 4.1.0 da API, e Enterprise é negociado por contrato. Se o consumo for legítimo e sustentado, encaminhe para Customer Success avaliar upgrade. Aumento temporário de limite só pode ser feito pelo N3.
+
+P: Qual a política de retenção de logs?
+R: Logs de aplicação ficam 30 dias no hot storage e mais 11 meses em cold storage. Logs de auditoria ficam 5 anos por exigência regulatória. Pedidos de log com mais de 30 dias levam até 48 horas para serem recuperados do cold storage.

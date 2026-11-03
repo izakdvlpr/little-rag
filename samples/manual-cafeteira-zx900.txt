@@ -1,0 +1,40 @@
+MANUAL DO USUÁRIO — CAFETEIRA NIMBUS ZX-900
+Versão do documento: 3.2 — revisado em março de 2025
+
+1. ESPECIFICAÇÕES TÉCNICAS
+
+A Nimbus ZX-900 opera em 220V e consome 1450W durante a extração. O reservatório de água tem capacidade de 1,8 litros e o compartimento de grãos comporta 350 gramas. A pressão máxima da bomba é de 19 bar, e o moedor cônico de cerâmica oferece 12 níveis de granulometria. O peso do aparelho vazio é de 8,4 kg.
+
+A garantia é de 24 meses para defeitos de fabricação, contados a partir da data da nota fiscal. A garantia não cobre danos causados por uso de água com dureza acima de 200 ppm nem por descalcificação com produtos não homologados.
+
+2. PRIMEIRO USO
+
+Antes do primeiro café, execute o ciclo de enxágue. Encha o reservatório com água filtrada, posicione um recipiente de pelo menos 500 ml sob o bico e mantenha o botão MENU pressionado por 5 segundos. O ciclo dura aproximadamente 2 minutos e descarta cerca de 400 ml de água.
+
+Nunca use água mineral com gás, água destilada pura ou leite diretamente no reservatório. A água destilada pura não possui os minerais que o sensor de condutividade usa para medir o nível, e o aparelho reportará reservatório vazio mesmo cheio.
+
+3. CÓDIGOS DE ERRO
+
+E01 — Reservatório de água vazio ou mal encaixado. Remova o reservatório, recoloque-o até ouvir o clique e confirme que o flutuador interno não está preso.
+
+E02 — Bandeja de resíduos cheia. A ZX-900 conta borras, não volume: o alarme dispara a cada 40 extrações, mesmo que a bandeja pareça ter espaço. Esvazie e recoloque a bandeja com o aparelho ligado, senão o contador não zera.
+
+E04 — Moedor travado. Geralmente causado por grão oleoso demais ou por um corpo estranho, como uma pedrinha. Desligue da tomada, remova o compartimento de grãos e use o pincel que acompanha o produto. Nunca use água no moedor.
+
+E07 — Superaquecimento da caldeira. Deixe o aparelho desligado por 30 minutos. Se o erro voltar em menos de 5 extrações, o termostato precisa de substituição em assistência autorizada.
+
+E11 — Falha no sensor de fluxo. Costuma indicar entupimento por calcário. Execute a descalcificação descrita na seção 4. Se persistir, é defeito de hardware.
+
+E19 — Erro de comunicação com o módulo Wi-Fi. Não impede o preparo de café, apenas o controle pelo aplicativo. Reinicie o roteador e, se necessário, refaça o pareamento.
+
+4. DESCALCIFICAÇÃO
+
+Recomendamos descalcificar a cada 300 extrações ou a cada 3 meses, o que vier primeiro. Use exclusivamente o descalcificante Nimbus DC-10. Vinagre e ácido cítrico caseiro atacam as vedações de silicone e anulam a garantia.
+
+Dissolva um sachê de DC-10 em 1 litro de água morna, despeje no reservatório e acesse MENU > MANUTENÇÃO > DESCALCIFICAR. O ciclo completo leva 25 minutos e não pode ser interrompido. Ao final, execute dois ciclos de enxágue com água limpa.
+
+5. LIMPEZA DIÁRIA
+
+O grupo de infusão deve ser removido e lavado com água corrente todos os dias, sem detergente. Seque antes de recolocar. O bico vaporizador precisa ser purgado por 3 segundos após cada uso com leite, caso contrário o resíduo endurece e obstrui os furos.
+
+Nenhuma peça da ZX-900 pode ir à máquina de lavar louça. A temperatura de secagem deforma o grupo de infusão de forma irreversível.

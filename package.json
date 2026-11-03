@@ -1,0 +1,28 @@
+{
+  "name": "little-rag",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RAG local com Express, Postgres/pgvector e Ollama",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch src/server.ts",
+    "start": "node --env-file-if-exists=.env src/server.ts",
+    "typecheck": "tsc",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.2.0",
+    "pg": "^8.16.3",
+    "pgvector": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "typescript": "^5.9.2"
+  }
+}
